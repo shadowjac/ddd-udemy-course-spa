@@ -6,7 +6,7 @@ Accept: application/json
 ###
 
 POST {{Api_HostAddress}}/api/Rentals
-Accept: application/json
+ccept: application/json
 Content-Type: application/json
 
 {
