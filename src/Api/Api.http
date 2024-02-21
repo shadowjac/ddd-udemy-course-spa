@@ -1,0 +1,17 @@
+@Api_HostAddress = http://localhost:3500
+
+GET {{Api_HostAddress}}/api/vehicles?startDate=01-01-2023&endDate=01-10-2023&test=123
+Accept: application/json
+
+###
+
+POST {{Api_HostAddress}}/api/Rentals
+Accept: application/json
+Content-Type: application/json
+
+{
+  "vehicleId": "5650eb04-97d5-41dd-9d12-81ab99e48333",
+  "userId": "5650eb04-97d5-41dd-9d12-81ab99e48334",
+  "startDate": "2023-01-30",
+  "endDate": "2023-01-10"
+}

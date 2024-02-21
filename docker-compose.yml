@@ -1,0 +1,30 @@
+﻿version: '3.8'
+services:
+  db-postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=myrentals
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    
+  api:
+    image: api
+    environment:
+      ASPNETCORE_ENVIRONMENT: docker
+    ports:
+      - '3500:8080'
+      - '3501:8081'
+    build:
+      context: .
+      dockerfile: src/Api/Dockerfile
+      
+volumes:
+  db:
+    driver: local
+      
+      
